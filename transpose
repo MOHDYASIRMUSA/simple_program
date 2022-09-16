@@ -3,8 +3,6 @@ int main() {
   int a[10][10], transpose[10][10], r, c;
   printf("Enter rows and columns: ");
   scanf("%d %d", &r, &c);
-
-  
   printf("\nEnter matrix elements:\n");
   for (int i = 0; i < r; ++i)
   {
@@ -14,8 +12,6 @@ int main() {
     scanf("%d", &a[i][j]);
   }
   }
-
- 
   printf("\nEntered matrix: \n");
   for (int i = 0; i < r; ++i)
   {
@@ -26,8 +22,6 @@ int main() {
     printf("\n");
   }
   }
-
-  
   for (int i = 0; i < r; ++i)
   {
   for (int j = 0; j < c; ++j)
@@ -35,8 +29,6 @@ int main() {
     transpose[j][i] = a[i][j];
   }
   }
-
-  
   printf("\nTranspose of the matrix:\n");
   for (int i = 0; i < c; ++i)
   {
