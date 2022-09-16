@@ -1,0 +1,43 @@
+#include<stdio.h>
+int main()
+{
+   int ro,co,i,j,a[10][10],b[10][10],c = 0,d=0,k=0;
+   printf("Enter row\n");
+   scanf("%d",&ro);
+   printf("Enter Column\n");
+   scanf("%d",&co);
+   printf("Enter Element of Matrix 1 \n");
+   for(i = 0; i < ro; i++)
+   {
+      for(j = 0; j < co; j++)
+      {
+         scanf("%d",&a[i][j]);
+      }
+   }
+   printf("Elements are \n");
+   for(i = 0; i < ro; i++)
+   {
+      for(j = 0; j < co; j++)
+      {
+         printf("%d  ",a[i][j]);
+      }
+      printf("\n");
+   }
+   
+   for(i = 0; i < ro; i++)
+   {
+      for(j = 0; j < co; j++)
+      {
+         if(a[i][j] == 0)
+            c++;
+        else
+        d++;
+      }
+   }
+   if(c > ((ro * co)/2))
+     { 
+         printf("Matrix is a sparse matrix \n");
+     }
+   else
+      printf("Matrix is not sparse matrix\n");
+}
