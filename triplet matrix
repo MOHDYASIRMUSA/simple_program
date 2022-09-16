@@ -1,7 +1,6 @@
 #include<stdio.h>   
 int main() 
-{ 
-    int S[10][10],m,n,i,k=0,size=0;
+{  int S[10][10],m,n,i,k=0,size=0;
     printf("Enter number of rows in the matrix : ");
     scanf("%d",&m);
     printf("Enter number of columns in the matrix : ");
@@ -15,12 +14,10 @@ int main()
         for (int j = 0; j < n; j++) {
             printf(" %d ",S[i][j]);
             if (S[i][j] != 0) 
-                size++;
-        }
+                size++; }
         printf("\n");
     }
-    int M[3][size]; 
-    
+    int M[3][size];  
     for (int i = 0; i < m; i++) 
         for (int j = 0; j < n; j++) 
             if (S[i][j] != 0) 
