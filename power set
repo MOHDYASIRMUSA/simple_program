@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+ 
+void PowerSet(char *set, int ssize)
+{
+    int psize = pow(2, ssize);
+    int c, j;
+
+    for(c = 0; c < psize; c++)
+    {
+        printf("{");
+      for(j = 0; j < ssize; j++)
+       {
+            
+          if(c & (1<<j))
+            printf("%c", set[j]);
+       }
+       printf("}  ");
+    }
+}
+ 
+void main()
+{
+    char set[] = {'a','b','c'};
+    PowerSet(set, 3);
+    
+}
