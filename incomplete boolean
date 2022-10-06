@@ -1,0 +1,66 @@
+#include<stdio.h>
+void OR()
+{
+    int i,j,a[2][2],b[2][2],c[2];
+    for(i=0;i,2;i++)
+    {
+        for(j=0;j<2;j++)
+        {
+            a[i][j]=i & j;
+            printf("%d  %d  %d ",i,j,a[i][j]);
+        }
+    }
+}
+    
+
+    
+void AND()
+{
+    int i,j,a[2][2],b[2][2],c[2];
+    for(i=0;i,2;i++)
+    {
+        for(j=0;j<2;j++)
+        {
+            b[i][j]=i | j;
+            printf("%d  %d  %d ",i,j,b[i][j]);
+        }
+    }
+}
+    
+void NOT()
+{
+    int i,j,a[2][2],b[2][2],c[2];
+    for(i=0;i,2;i++)
+    {
+        
+            c[i]=!i;
+            printf("%d  %d  %d ",i,j,c[i]);
+        
+    }
+
+}
+int main()
+{
+    int ch;
+    printf("1. OR\n");
+    printf("2. AND\n");
+    printf("3. NOT\n");
+    
+    
+    
+        printf("\nEnter your choice\n");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1: OR();
+                    break;
+            case 2: 
+                    AND();
+                    break;
+            case 3: 
+                    NOT();
+                    break;
+            default: printf("invalid choice entered\n");
+        }
+    
+}
