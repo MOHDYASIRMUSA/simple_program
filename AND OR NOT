@@ -7,18 +7,14 @@ int OR(int x,int y)
      return 1;
     if(x==0 && y==0)
      return 0;
-}
-    
-
-    
+} 
 int AND(int x,int y)
 {
     if(x==1 && y==1)
      return 1;
     else
      return 0;
-}
-    
+}    
 int NOT(int x)
 {
     if(x==1)
