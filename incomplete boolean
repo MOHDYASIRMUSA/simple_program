@@ -2,12 +2,12 @@
 void OR()
 {
     int i,j,a[2][2],b[2][2],c[2];
-    for(i=0;i,2;i++)
+    for(i=0;i<2;i++)
     {
         for(j=0;j<2;j++)
         {
             a[i][j]=i & j;
-            printf("%d  %d  %d ",i,j,a[i][j]);
+            printf("%d  %d  %d \n",i,j,a[i][j]);
         }
     }
 }
@@ -17,12 +17,12 @@ void OR()
 void AND()
 {
     int i,j,a[2][2],b[2][2],c[2];
-    for(i=0;i,2;i++)
+    for(i=0;i<2;i++)
     {
         for(j=0;j<2;j++)
         {
             b[i][j]=i | j;
-            printf("%d  %d  %d ",i,j,b[i][j]);
+            printf("%d  %d  %d \n",i,j,b[i][j]);
         }
     }
 }
@@ -30,11 +30,11 @@ void AND()
 void NOT()
 {
     int i,j,a[2][2],b[2][2],c[2];
-    for(i=0;i,2;i++)
+    for(i=0;i<2;i++)
     {
         
             c[i]=!i;
-            printf("%d  %d  %d ",i,j,c[i]);
+            printf("%d  %d  %d \n",i,j,c[i]);
         
     }
 
@@ -47,7 +47,8 @@ int main()
     printf("3. NOT\n");
     
     
-    
+    while(1)
+   {
         printf("\nEnter your choice\n");
         scanf("%d",&ch);
         switch(ch)
@@ -62,5 +63,5 @@ int main()
                     break;
             default: printf("invalid choice entered\n");
         }
-    
+    }
 }
