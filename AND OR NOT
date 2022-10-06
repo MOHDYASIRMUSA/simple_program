@@ -51,7 +51,8 @@ int main()
                     scanf("%d",&a);
                     printf("%d",NOT(a));
                     break;
-            case 4: exit(0);
+            
             default: printf("invalid choice entered\n");
         }
+    }
     }
