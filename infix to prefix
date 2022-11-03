@@ -30,11 +30,9 @@ int peek(){
         return INT_MIN; 
     return stack[top]; 
 } 
-
 int checkIfOperand(char ch) {
     return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'); 
 } 
-
 int precedence(char ch) 
 { 
     switch (ch) 
@@ -42,29 +40,23 @@ int precedence(char ch)
     case '+': 
     case '-': 
         return 1; 
-
     case '*': 
     case '/': 
         return 2; 
-
     case '^': 
         return 3; 
     } 
     return -1; 
 } 
-
 int getPostfix(char* expression) 
 { 
     int i, j;
-
     for (i = 0, j = -1; expression[i]; ++i) 
     { 
         if (checkIfOperand(expression[i])) 
             expression[++j] = expression[i]; 
-
         else if (expression[i] == '(') 
             push(expression[i]); 
-
         else if (expression[i] == ')') 
         { 
             while (!isEmpty(stack) && peek(stack) != '(') 
@@ -80,22 +72,15 @@ int getPostfix(char* expression)
                 expression[++j] = pop(stack); 
             push(expression[i]); 
         } 
-
     } 
-
     while (!isEmpty(stack)) 
         expression[++j] = pop(stack); 
-
-    expression[++j] = '\0'; 
-    
+    expression[++j] = '\0';   
 }
-
 void reverse(char *exp){
-
     int size = strlen(exp);
     int j = size, i=0;
     char temp[size];
-
     temp[j--]='\0';
     while(exp[i]!='\0')
     {
@@ -117,29 +102,19 @@ void brackets(char* exp){
     }
 }
 void InfixtoPrefix(char *exp){
-
     int size = strlen(exp);
-
-
-    reverse(exp);
-    
-    brackets(exp);
-    
-    getPostfix(exp);
-    
+    reverse(exp); 
+    brackets(exp); 
+   getPostfix(exp);   
     reverse(exp);
 }
-
 int main()
 {    
     printf("The infix is: ");
-
-    char expression[] = "((a/b)+c)-(d+(e*f))"; 
+   char expression[] = "((a/b)+c)-(d+(e*f))"; 
     printf("%s\n",expression);
     InfixtoPrefix(expression); 
-
     printf("The prefix is: ");
     printf("%s\n",expression);
-
     return 0; 
 }
