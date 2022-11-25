@@ -1,0 +1,56 @@
+#include<stdio.h>
+#define size 7
+int arr[size];
+void init()
+{   
+    int i;
+    for(i = 0; i < size; i++)
+        arr[i] = -1;
+}
+void insert(int value)
+{   
+    int hf1 = value % size;
+    int hf2 = 1+(value%size-2);
+    int c=1,d=2;
+    for (int i=0;i<size;i++)
+    {
+        int key =hf1+(i*hf2);
+    if(arr[key] == -1)
+    {   
+        arr[key] = value;
+        printf("%d inserted at arr[%d]\n", value,key);
+        break;
+    }
+    }
+}
+void search(int value)
+{
+    int key = value % size;
+    if(arr[key] == value)
+        printf("Search Found at %d \n",key);
+    else
+        printf("Search Not Found\n");
+}
+void print()
+{
+    int i;
+    for(i = 0; i < size; i++)
+        printf("arr[%d] = %d\n",i,arr[i]);
+}
+int main()
+{
+    init();
+    insert(10); 
+    insert(4); 
+    insert(2);  
+    insert(3);
+    insert(9);
+    printf("Hash table\n");
+    print();
+    printf("\n");
+    printf("Searching value 4..\n");
+    search(4);
+    printf("Searching value 10..\n");
+    search(10);
+    return 0;
+}
