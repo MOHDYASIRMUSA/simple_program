@@ -14,7 +14,7 @@ tmp->left_child = tmp->right_child = NULL;
 return tmp;
 }
 
-void print(struct node *root_node) // displaying the nodes!
+void print(struct node *root_node) 
 {
 if (root_node != NULL)
 {
@@ -24,7 +24,7 @@ print(root_node->right_child);
 }
 }
 
-struct node* insert_node(struct node* node, int value) // inserting nodes!
+struct node* insert_node(struct node* node, int value) 
 {
 
 if (node == NULL) return new_node(value);
@@ -42,7 +42,7 @@ return node;
 int main()
 {
 
-printf("TechVidvan Tutorial: Implementation of a Binary Tree in C!\n\n");
+printf("Implementation of a Binary Tree in C!\n\n");
 
 struct node *root_node = NULL;
 root_node = insert_node(root_node, 10);
