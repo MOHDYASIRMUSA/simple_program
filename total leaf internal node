@@ -1,0 +1,73 @@
+#include <stdio.h>
+ #include <stdlib.h>
+ 
+struct node {
+    int data;
+    struct node *left;
+    struct node *right;
+};
+ 
+struct node* getNewNode(int data) {
+  struct node* newNode = (struct node*)malloc(sizeof(struct node));
+ 
+  newNode->data = data;
+  newNode->left = NULL;
+  newNode->right = NULL;
+   
+  return newNode;
+}
+ 
+struct node* generateBTree(){
+    struct node* root =  getNewNode(1);
+    root->left = getNewNode(2);
+    root->right = getNewNode(3);
+    root->left->left = getNewNode(4);
+    root->left->right = getNewNode(5);
+    root->right->left = getNewNode(6);
+    root->right->right = getNewNode(7);
+    root->left->left->left = getNewNode(8);
+     
+    return root;
+ 
+}
+int counttotalNode(struct node *root){
+    
+    if(root == NULL)
+        return 0;
+
+    else if(root->left == NULL && root->right == NULL)
+        return 1;
+    else
+    return 1+counttotalNode(root->left) + counttotalNode(root->right);
+}
+ 
+int countLeafNode(struct node *root){
+    
+    if(root == NULL)
+        return 0;
+
+    if(root->left == NULL && root->right == NULL)
+        return 1;
+    return countLeafNode(root->left) + countLeafNode(root->right);
+}
+int countinternalNode(struct node *root){
+    
+    if(root == NULL)
+        return 0;
+
+    else if(root->left == NULL && root->right == NULL)
+        return 0;
+    else
+    return 1+countinternalNode(root->left) + countinternalNode(root->right);
+}
+int main() {
+    struct node *root = generateBTree();    
+    printf("Number of leaf Node : %d \n", countLeafNode(root));
+    printf("Number of total Node : %d \n", counttotalNode(root));
+    printf("Number of internal Node : %d \n", countinternalNode(root));
+    getchar();
+    return 0; 
+}
+
+
+
